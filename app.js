@@ -14,4 +14,4 @@ app.get("/", (req, res) => {
     });
 });
 
-app.listen(3000, (req, res) => console.log("The quote machine server has started!"));
+app.listen(3000, () => console.log("The quote machine server has started!"));
