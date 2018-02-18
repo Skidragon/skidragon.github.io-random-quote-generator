@@ -1,0 +1,37 @@
+
+
+<% include partials/header %>
+
+<div class = "container">
+
+<div class = "jumbotron" >
+    <h1 class = "text-center">Welcome to the Random Quote Machine</h1>
+    <h2 class = "text-center">This machine will give you random wisdom!</h2>
+</div> <!--jumbotron ends-->
+
+<div class = "row">
+
+
+<input type="button" value = "New Quote" id = "quote-btn" class = "btn btn-large btn-primary mx-auto">
+
+</div> <!-- row ends-->
+
+ <p class = "lead quote-text" id = "quote-text">
+ <%= getRandomQuote() %>
+</p>
+
+
+</div> <!-- bootstrap container ends-->
+
+
+<%
+function getRandomQuote() {
+    return quoteData[randomInt(0,quoteData.length)].quote;
+}
+
+function randomInt(min,max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+%>
+<% include partials/footer %>
